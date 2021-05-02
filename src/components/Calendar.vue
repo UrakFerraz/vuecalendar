@@ -125,4 +125,21 @@ export default {
 .prevNext
   display: flex
   justify-content: space-between
+
+.block:nth-of-type(2)
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  padding: 20px
+  bottom: 0
+  min-width: 220px
+
+@media (max-width: 700px)
+  p
+    font-size: 16px !important
+
+  .calendar-days p
+    font-size: 10px !important
+    align-self: center
+    line-height: 1
 </style>
