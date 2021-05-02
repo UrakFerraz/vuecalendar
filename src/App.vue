@@ -1,26 +1,68 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="calender">
+    <Calendar />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import Calendar from "./components/Calendar";
 export default {
   name: "App",
+  data() {
+    return {
+      fname: "Urak",
+      cname: "Ferraz",
+      heroes: [
+        {
+          name: "Super Man",
+        },
+        {
+          name: "Super Girl",
+        },
+        {
+          name: "Batman",
+        },
+        {
+          name: "Robin",
+        },
+        {
+          name: "Flash",
+        },
+      ],
+      newHero: "",
+      mostrar: true,
+      isDisabled: false,
+    };
+  },
+  created() {
+    console.log(this.heroes);
+  },
+  computed: {
+    herosCount() {
+      return this.heroes.length;
+    },
+    fullname() {
+      return this.cname + this.fname;
+    },
+  },
+  methods: {
+    enviar() {
+      if (this.newHero !== "") {
+        this.heroes.push({ name: this.newHero });
+        this.newHero = "";
+        console.log(this.heroes);
+      }
+    },
+    deltask(index) {
+      this.heroes.splice(index, 1);
+    },
+  },
   components: {
-    HelloWorld,
+    Calendar,
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "~bulma";
 </style>
