@@ -1,4 +1,4 @@
-# marvel
+# vue calendar
 
 ## Project setup
 ```
