@@ -22,7 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+```
 
-
-### Customize configuration:
+### link deployn:
 https://urakferraz.github.io/vuecalendar/
